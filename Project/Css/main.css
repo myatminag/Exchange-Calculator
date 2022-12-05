@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap");
+@font-face {
+  font-family: "mm";
+  font-weight: normal;
+  src: url("../Fonts/MyanmarSagar.ttf");
+}
+
+:root {
+  --primary: #2CD1EE;
+  --softPrimary: rgba(54, 225, 255, 0.909);
+  --secondary: #707070;
+  --secondarySoft: #f2f2f2f2;
+  --light: #ffffff;
+  --dark: #000000;
+  --night: #19191a;
+  --nightPrimary: #3a3b3c;
+  --nightSecondary: #a9acb1;
+  --brRadius: 0.5em;
+  --border: 1px solid #707070;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* This is to remove the arrow of select element in IE */
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+
+@-moz-document url-prefix() {
+  select {
+    width: 110%;
+    background-position: right 30px center !important;
+    border: none !important;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Oswald', 'mm';
+  color: var(--secondary);
+}
+
+body {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.mm {
+  font-family: "mm";
+}
+
+.divider {
+  background: var(--secondary);
+  height: 0.2em;
+  margin-top: 0.5em;
+  border-radius: var(--brRadius);
+}
+
+.app {
+  width: 700px;
+  margin: 100px auto;
+}
+
+.app .output {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app .output .output-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app .output .output-logo .logo {
+  width: 50px;
+}
+
+.app .output .output-logo .title {
+  margin-left: 1.3em;
+  font-size: 2em;
+}
+
+.app .output .output-result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.app .output .output-result .result {
+  font-size: 2em;
+}
+
+.app .hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 0.5em;
+}
+
+.app .hero .container label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.app .hero .container {
+  width: 150px;
+}
+
+.app .hero .container .input {
+  width: 100%;
+  padding: 0.3em;
+  border-radius: var(--brRadius);
+  border: var(--border);
+  text-align: right;
+}
+
+.app .hero .container .from {
+  width: 100%;
+  padding: 0.3em;
+  border-radius: var(--brRadius);
+  border: var(--border);
+}
+
+.app .hero .container .to {
+  width: 100%;
+  padding: 0.3em;
+  border-radius: var(--brRadius);
+  border: var(--border);
+}
+
+.app .hero .container .calc-btn {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--brRadius);
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  color: var(--light);
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.app .hero .container .calc-btn:active {
+  background-color: var(--softPrimary);
+}
+
+.app .hero select:focus, .app .hero input:focus, .app .hero button:focus {
+  outline: none;
+}
+
+.app .history {
+  width: 100%;
+  margin-top: 1.5em;
+}
+
+.app .history th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+.app .history th, .app .history td {
+  padding: 8px;
+  border-radius: var(--brRadius);
+}
+
+.app .history tr {
+  background-color: var(--secondarySoft);
+}
+
+.app .history tr:hover {
+  background-color: #ddd;
+}
+
+.app .history th:last-child {
+  text-align: right;
+}
+
+.app .history td:last-child {
+  text-align: right;
+}
+
+.app #rowSpace td {
+  text-align: center !important;
+}
+
+@media screen and (max-width: 480px) {
+  .app {
+    width: 95%;
+    margin: 2.5em auto;
+  }
+  .app .output {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .app .output .output-logo {
+    width: 100%;
+  }
+  .app .hero {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .app .hero .container {
+    width: 100%;
+    margin-bottom: 0.8em;
+  }
+  .app .hero .container .input, .app .hero .container .from, .app .hero .container .to {
+    padding: 0.5em;
+  }
+  .app .hero .from-container, .app .hero .to-container {
+    width: 45%;
+  }
+  .app .hero .calc-btn {
+    padding: 0.5em 0;
+  }
+}
+
+.mode-change {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background: var(--dark);
+}
+
+.mode-change .fas {
+  color: var(--light) !important;
+}
+
+body.night-mode {
+  background-color: var(--night);
+}
+
+body.night-mode .night-mode tr {
+  background-color: var(--nightPrimary);
+}
+
+body.night-mode .night-mode .divider {
+  background-color: var(--nightSecondary);
+}
+
+body.night-mode .night-mode .result {
+  background-color: var(--nightSecondary);
+}
+
+body.night-mode .night-mode td {
+  background-color: var(--nightSecondary);
+}
+
+body.night-mode .night-mode input, body.night-mode .night-mode select {
+  color: var(--nightSecondary);
+  background-color: var(--nightPrimary);
+}
+
+body.night-mode .mode-change {
+  background-color: var(--light);
+}
+
+body.night-mode .mode-change .fas {
+  color: var(--dark) !important;
+}
+/*# sourceMappingURL=main.css.map */

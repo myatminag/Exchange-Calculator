@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>MMEs Exchange</title>
+    <link rel="icon" href="Images/logo.svg" type="Images/icon">
+    <meta name="title" content="MMEs Exchange">
+    <meta name="description" content="Project Tutorial....">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mms-it.com/">
+    <meta property="og:title" content="MMEs Exchange">
+    <meta property="og:description" content="Project Tutorial....">
+    <meta property="og:image" content="Images/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mms-it.com/">
+    <meta property="twitter:title" content="MMEs Exchange">
+    <meta property="twitter:description" content="Project Tutorial....">
+    <meta property="twitter:image" content="Images/logo.png">
+    <title>Exchange Calculator</title>
+
+    <link rel="stylesheet" href="./Css/main.css">
+    <link rel="stylesheet" href="./Vendor/Fontawesome/css/all.css">
+    <link rel="stylesheet" href="./Vendor/Animate_it/animate.min.css">
+</head>
+<body>
+
+    <section class="app animate__animated animate__fadeInDown">
+
+        <div class="output">
+            <div class="output-logo">
+                <img class="logo" src="./Images/logo.svg" alt="">
+                <p class="title">MMEx</p>
+            </div>
+            <div class="output-result">
+                <p class="result" id="result">0.00</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <form class="hero" id="calc">
+            <div class="container">
+                <label>Input</label>
+                <input type="number" class="input" id="input" placeholder="0.00" min="1" autofocus required>
+            </div>
+            <div class="from-container container">
+                <label>From</label>
+                <select id="from" class="from" onchange="test()" required>
+                    <option value="" selected >Select Currency</option>
+                </select>
+            </div>
+            <div class="to-container container">
+                <label>To</label>
+                <select id="to" class="to" required>
+                    
+                </select>
+            </div>
+            <div class="container">
+                <button class="calc-btn" id="calcBtn">Calculate</button>
+            </div>
+        </form>
+
+        <div class="history-container">
+            <table class="history">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody id="historyList">
+                    
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <button class="mode-change animate__animated animate__slideInUp" onclick="changeMode()">
+        <i class="fas fa-moon" id="modeIcon"></i>
+    </button>
+    
+    <script src="./Js/Data.Js"></script>
+    <script src="./Js/App.js"></script>
+    
+</body>
+</html>

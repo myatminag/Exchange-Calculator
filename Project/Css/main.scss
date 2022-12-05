@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap');
+
+@font-face {
+  font-family: "mm";
+  font-weight: normal;
+  src: url("../Fonts/MyanmarSagar.ttf");
+}
+
+:root {
+  --primary : #2CD1EE;
+  --softPrimary : rgba(54, 225, 255, 0.909);
+  --secondary : #707070;
+  --secondarySoft : #f2f2f2f2;
+  --light : #ffffff;
+  --dark : #000000;
+  --night : #19191a;
+  --nightPrimary : #3a3b3c;
+  --nightSecondary : #a9acb1;
+  --brRadius : 0.5em;
+  --border : 1px solid #707070;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* This is to remove the arrow of select element in IE */
+select::-ms-expand {	display: none; }
+select{
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+@-moz-document url-prefix(){
+    select { width: 110%; background-position: right 30px center !important; border: none !important;}
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', 'mm';
+  color: var(--secondary);
+}
+
+body {
+    transition: 0.5s;
+}
+
+.mm {
+    font-family: "mm";
+}
+
+.divider {
+    background: var(--secondary);
+    height: 0.2em;
+    margin-top: 0.5em;
+    border-radius: var(--brRadius);
+}
+
+.app {
+    width: 700px;
+    margin: 100px auto;
+
+    .output {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .output-logo {
+            display: flex;
+            align-items: center;
+
+            .logo {
+                width: 50px;
+            }
+
+            .title {
+                margin-left: 1.3em;
+                font-size: 2em;
+            }
+        }
+
+        .output-result {
+            display: flex;
+
+            .result {
+                font-size: 2em;
+            }
+        }
+    }
+
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5em;
+
+        .container label{
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        .container {
+            width: 150px;
+
+            .input {
+                width: 100%;
+                padding: 0.3em;
+                border-radius: var(--brRadius);
+                border: var(--border);
+                text-align: right;
+            }
+
+            .from {
+                width: 100%;
+                padding: 0.3em;
+                border-radius: var(--brRadius);
+                border: var(--border);
+            }
+
+            .to {
+                width: 100%;
+                padding: 0.3em;
+                border-radius: var(--brRadius);
+                border: var(--border);
+            }
+
+            .calc-btn{
+                width: 100%;
+                height: 100%;
+                border-radius: var(--brRadius);
+                background-color: var(--primary);
+                border: 1px solid var(--primary);
+                color: var(--light);
+                font-size: 1.5em;
+                text-transform: uppercase;
+            }
+
+            .calc-btn:active {
+                background-color: var(--softPrimary);
+            }
+        }
+
+        select:focus,input:focus,button:focus {
+            outline: none;
+        }
+    }
+
+    .history {
+        // border-collapse: collapse;
+        width: 100%;
+        margin-top: 1.5em;
+    }
+
+    .history th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: var(--primary);
+        color: var(--light);
+    }
+
+    .history th, .history td {
+        // border: 1px solid #ddd;
+        padding: 8px;
+        border-radius: var(--brRadius);
+    }
+
+    .history tr {
+        background-color: var(--secondarySoft);
+    }
+
+    .history tr:hover {
+        background-color: #ddd;
+    }
+
+    .history th:last-child {
+        text-align: right;
+    }
+
+    .history td:last-child {
+        text-align: right;
+    }
+
+    #rowSpace td {
+        text-align: center !important;
+    }
+}
+
+//Reponsive
+@media screen and (max-width: 480px) {
+    .app {
+        width: 95%;
+        margin: 2.5em auto;
+
+        .output {
+            flex-flow: column;
+            align-items: flex-end;
+
+            .output-logo {
+                width: 100%;
+            }
+
+            // .output-result {
+                
+            // }
+        }
+
+        .hero {
+            flex-wrap: wrap;
+
+            .container {
+                width: 100%;
+                margin-bottom: 0.8em;
+
+                .input, .from, .to {
+                    padding: 0.5em;
+                }
+            }
+
+            .from-container, .to-container {
+                width: 45%;
+            }
+
+            .calc-btn {
+                padding: 0.5em 0;
+            }
+        }
+    }
+}
+
+.mode-change {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background: var(--dark);
+
+    .fas {
+        color: var(--light) !important;
+    }
+}
+
+body.night-mode {
+    background-color: var(--night);
+
+    .night-mode tr {
+        background-color: var(--nightPrimary);
+    }
+
+    .night-mode .divider {
+        background-color: var(--nightSecondary);
+    }
+
+    .night-mode .result {
+        background-color: var(--nightSecondary);
+    }
+
+    .night-mode td {
+        background-color: var(--nightSecondary);
+    }
+
+    .night-mode input, .night-mode select {
+        color: var(--nightSecondary);
+        background-color: var(--nightPrimary);
+    }
+
+    .mode-change {
+        background-color: var(--light);
+    }
+
+    .mode-change .fas {
+        color: var(--dark) !important;
+    }
+}
